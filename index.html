@@ -351,9 +351,66 @@ nav a:hover{
   }
 }
     }
+    .site-footer{
+  border-top:1px solid var(--line);
+  padding:28px 0 50px;
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+
+.footer-inner a{
+  color:var(--muted);
+  text-decoration:none;
+}
+
+.footer-inner a:hover{
+  color:var(--accent);
+}
+
+.legal-section{
+  padding:80px 0;
+  border-top:1px solid var(--line);
+}
+
+.legal-copy{
+  max-width:760px;
+}
+
+.legal-copy h2{
+  text-align:left;
+  margin-bottom:24px;
+}
+
+.legal-copy h3{
+  font-size:1.3rem;
+  margin:32px 0 12px;
+}
+
+.legal-copy p{
+  margin-bottom:16px;
+}
+
+.legal-copy a{
+  color:var(--accent);
+  text-decoration:none;
+}
+
+.legal-copy a:hover{
+  text-decoration:underline;
+}
   </style>
 </head>
-
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#impressum">Impressum</a>
+    <a href="#datenschutz">Datenschutz</a>
+  </div>
+</footer>
 <body>
   <body id="top"></body>
   <header class="site-header">
@@ -490,5 +547,77 @@ nav a:hover{
     </div>
   </section>
 
+  <section id="impressum" class="legal-section">
+    <div class="container legal-copy">
+      <span class="kicker">Legal</span>
+      <h2>Impressum</h2>
+  
+      <p>Angaben gemäß § 5 DDG</p>
+  
+      <p>
+        Lucie Heidenreich<br>
+        Sandstraße 17<br>
+        91080 Spardorf<br>
+        Deutschland
+      </p>
+  
+      <p>
+        E-Mail:
+        <a href="mailto:hello@tryyo.de">hello@tryyo.de</a>
+      </p>
+  
+      <p>
+        Berufliche Tätigkeit: Angebote im Bereich Workshops, Impact Framing und Design Sprints.
+      </p>
+  
+      <p>
+        Umsatzsteuer-ID: nicht vorhanden
+      </p>
+    </div>
+  </section>
+  <section id="datenschutz" class="legal-section">
+    <div class="container legal-copy">
+      <span class="kicker">Legal</span>
+      <h2>Datenschutz</h2>
+  
+      <p>
+        Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website dient der Bereitstellung von Informationen über TRYYO und die angebotenen Leistungen.
+      </p>
+  
+      <h3>1. Verantwortliche</h3>
+      <p>
+        Lucie Heidenreich<br>
+        Sandstraße 17<br>
+        91080 Spardorf<br>
+        Deutschland<br>
+        E-Mail: <a href="mailto:hello@tryyo.de">hello@tryyo.de</a>
+      </p>
+  
+      <h3>2. Hosting über GitHub Pages</h3>
+      <p>
+        Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Website können durch den Hosting-Anbieter technisch erforderliche Zugriffsdaten verarbeitet werden, insbesondere IP-Adresse, Datum und Uhrzeit des Abrufs, Browserinformationen sowie Informationen zum aufgerufenen Inhalt.
+      </p>
+  
+      <h3>3. Einbindung von Google Fonts</h3>
+      <p>
+        Auf dieser Website werden Schriftarten von Google Fonts eingebunden. Dabei kann es technisch dazu kommen, dass Ihre IP-Adresse sowie weitere browserbezogene Informationen an Google übermittelt werden.
+      </p>
+  
+      <h3>4. Kontaktaufnahme per E-Mail</h3>
+      <p>
+        Wenn Sie per E-Mail Kontakt aufnehmen, werden die von Ihnen übermittelten personenbezogenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen verarbeitet.
+      </p>
+  
+      <h3>5. Ihre Rechte</h3>
+      <p>
+        Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie gegebenenfalls auf Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.
+      </p>
+  
+      <h3>6. Hinweis</h3>
+      <p>
+        Diese Datenschutzerklärung bezieht sich auf den aktuellen Stand dieser Website ohne Kontaktformular, Newsletter-Tool, Analyse-Tool oder Tracking-Cookies.
+      </p>
+    </div>
+  </section>
 </body>
 </html>
