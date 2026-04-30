@@ -1,414 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="top">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucie Heidenreich – Design Sprints</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
   <style>
-
-/* NAVBAR */
-
-.site-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  backdrop-filter:blur(12px);
-  background:rgba(244,241,236,0.7);
-  border-bottom:1px solid rgba(0,0,0,0.05);
-  z-index:10;
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-
-.nav-inner{
-  width:min(1100px,calc(100% - 40px));
-  margin:0 auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  height:70px;
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-ExtraBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
-
-.brand{
-  color: var(--accent);
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-decoration: none;
+:root{
+  --bg:#f4f1ec;
+  --text:#1f1b19;
+  --muted:#6b645f;
+  --accent:#9c4a3f;
+  --line:rgba(0,0,0,0.08);
+  --max:1100px;
 }
-
-.brand:hover{
-  opacity: 0.8;
-}
-
-nav{
-  display:flex;
-  gap:20px;
-  align-items:center;
-}
-
-nav a{
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
   color:var(--text);
-  font-size:0.9rem;
-  text-decoration: none;
+  line-height:1.6;
 }
-
-nav a:hover{
-  color:var(--accent);
-  text-decoration: none;
-}
-
-.cta{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  background:var(--text);
-  color:var(--bg);
-  font-weight:500;
-  text-decoration:none;
-  transition:
-    background-color 0.22s ease,
-    color 0.22s ease,
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.cta:hover{
-  background:var(--accent);
-  color:var(--bg);
-  transform:translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.cta:active{
-  transform:translateY(0);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
-}
-
-.site-header.scrolled{
-  background:rgba(244,241,236,0.95);
-}
-
-/* HERO IMAGE */
-
-.hero{
-  position:relative;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  background:url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;
-  color:#fff;
-}
-
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,0,0,0.6) 0%,
-    rgba(0,0,0,0.3) 50%,
-    rgba(0,0,0,0.1) 100%
-  );
-}
-
-.hero-content{
-  position:relative;
-  z-index:1;
-  padding-top:80px;
-}
-
-.hero .lead{
-  color:rgba(255,255,255,0.85);
-}
-
-/* SPACING FIX wegen fixed nav */
-
-.hero{
-  padding-top:70px;
-}
-    :root{
-      --bg:#f4f1ec;
-      --text:#1f1b19;
-      --muted:#6b645f;
-      --accent:#9c4a3f;
-      --line:rgba(0,0,0,0.08);
-      --max:1100px;
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-
-    body{
-      font-family:'Inter',sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    .container{
-      width:min(var(--max),calc(100% - 40px));
-      margin:0 auto;
-    }
-
-    h1,h2,h3{
-      font-family:'Playfair Display',serif;
-      letter-spacing:-0.03em;
-    }
-
-    /* HERO */
-
-    .hero{
-      min-height:90vh;
-      display:flex;
-      align-items:center;
-    }
-
-    h1{
-      font-size:clamp(3rem,6vw,5.5rem);
-      max-width:12ch;
-      margin-bottom:24px;
-  line-height: 1.1;
-}
-    }
-
-    .lead{
-      max-width:600px;
-      color:var(--muted);
-      font-size:1.1rem;
-      margin-bottom:30px;
-    }
-
-    .button{
-  display:inline-block;
-  padding:14px 22px;
-  border-radius:999px;
-  background:var(--text);
-  color:var(--bg);
-  font-weight:600;
-  margin-top:20px;
-  text-decoration:none;
-  transition:
-    background-color 0.22s ease,
-    color 0.22s ease,
-    transform 0.22s ease,
-    box-shadow 0.22s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-}
-
-.button:hover{
-  background:var(--accent);
-  color:var(--bg);
-  transform:translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.button:active{
-  transform:translateY(0);
-  box-shadow: 0 3px 10px rgba(0,0,0,0.10);
-}
-
-    /* SECTION */
-
-    section{
-      padding:100px 0;
-    }
-
-    .kicker{
-      text-transform:uppercase;
-      font-size:0.75rem;
-      letter-spacing:0.15em;
-      color:var(--accent);
-      margin-bottom:10px;
-      display:block;
-      text-align:center;
-    }
-
-    h2{
-      font-size:clamp(2rem,3vw,3rem);
-      margin-bottom:20px;
-      text-align:center;
-    }
-
-    .text{
-      max-width:650px;
-      color:var(--text);
-      text-align:center;
-      display:grid;
-      align-items:center;
-    }
-
-    /* POSITIONING BLOCK */
-
-    .positioning{
-      text-align:center;
-      display:grid;
-      align-items:center;
-    }
-
-    .big-statement{
-      font-size:1.6rem;
-      font-family:'Playfair Display',serif;
-      line-height:1.3;
-      margin-bottom:20px;
-    }
-
-    /* SERVICES */
-
-    .services {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 900px;   /* controls how wide the cards sit */
-  margin: 40px auto 0; /* centers horizontally */
-}
-
-
-.card{
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-start;
-  height:100%;
-  text-align:left;
-}
-
-
-.card p {
-  text-align: left;
-}
-
-
-.card li {
-  position: relative;
-  padding-left: 20px;
-  margin-bottom: 10px;
-  color:var(--text);
-}
-
-.card li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-}
-.card ul {
-  text-align: left;
-  padding-left: 0;
-  margin-top:20px;
-  list-style:none;
-}
-    .card h3{
-      margin-bottom:15px;
-      font-size:1.6rem;
-    }
-
-
-
-    /* PROOF */
-
-    .proof{
-      text-align:center;
-    }
-
-    .proof-intro{
-  max-width: 700px;
-  margin: 0 auto 24px;
-  color: var(--text);
-  text-align: center;
-}
-
-.proof-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:40px;
-  max-width:900px;
-  margin:40px auto 0;
-  align-items:start;
-}
-
-.proof-grid .card{
-  height: 100%;
-}
-
-    /* CONTACT */
-
-    .contact{
-      text-align:center;
-    }
-
-    .contact a{
-      margin-top:20px;
-      display:inline-block;
-    }
-
-    /* MOBILE */
-    @media(max-width:900px){
-  .positioning,
-  .services,
-  .proof-grid{
-    grid-template-columns:1fr;
-  }
-}
-    }
-    .site-footer{
-  border-top:1px solid var(--line);
-  padding:28px 0 50px;
-}
-
-.footer-inner{
-  display:flex;
-  justify-content:center;
-  gap:24px;
-  flex-wrap:wrap;
-}
-
-.footer-inner a{
-  color:var(--muted);
-  text-decoration:none;
-}
-
-.footer-inner a:hover{
-  color:var(--accent);
-}
-
-.legal-section{
-  padding:80px 0;
-  border-top:1px solid var(--line);
-  
-}
-
-.legal-copy{
-  max-width:760px;
-}
-
-.legal-copy h2{
-  text-align:left;
-  margin-bottom:24px;
-}
-
-.legal-copy h3{
-  font-size:1.3rem;
-  margin:32px 0 12px;
-}
-
-.legal-copy p{
-  margin-bottom:16px;
-}
-
-.legal-copy a{
-  color:var(--accent);
-  text-decoration:none;
-}
-
-.legal-copy a:hover{
-  text-decoration:underline;
-}
+.container{width:min(var(--max),calc(100% - 40px));margin:0 auto;}
+h1,h2,h3{font-family:'Inter',sans-serif;letter-spacing:-0.03em;font-weight:800;}
+.site-header{position:fixed;top:0;width:100%;backdrop-filter:blur(12px);background:rgba(244,241,236,0.7);border-bottom:1px solid rgba(0,0,0,0.05);z-index:10;}
+.site-header.scrolled{background:rgba(244,241,236,0.95);}
+.nav-inner{width:min(1100px,calc(100% - 40px));margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:70px;}
+.brand{color:var(--accent);font-weight:800;letter-spacing:0.03em;text-decoration:none;}
+.brand:hover{opacity:0.8;}
+nav{display:flex;gap:20px;align-items:center;}
+nav a{color:var(--text);font-size:0.9rem;text-decoration:none;}
+nav a:hover{color:var(--accent);}
+.cta,.button{display:inline-block;padding:10px 16px;border-radius:999px;background:var(--text);color:var(--bg);font-weight:600;text-decoration:none;transition:background-color 0.22s ease,color 0.22s ease,transform 0.22s ease,box-shadow 0.22s ease;box-shadow:0 2px 8px rgba(0,0,0,0.08);}
+.cta:hover,.button:hover{background:var(--accent);color:var(--bg);transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,0.12);}
+.cta:active,.button:active{transform:translateY(0);box-shadow:0 3px 10px rgba(0,0,0,0.10);}
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding-top:70px;background:url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?q=80&w=1800&auto=format&fit=crop') center/cover no-repeat;color:#fff;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.3) 50%,rgba(0,0,0,0.1) 100%);}
+.hero-content{position:relative;z-index:1;}
+.hero .lead{color:rgba(255,255,255,0.85);}
+h1{font-size:clamp(3rem,6vw,5.5rem);max-width:12ch;margin-bottom:24px;line-height:1.1;}
+.lead{max-width:600px;color:var(--muted);font-size:1.1rem;margin-bottom:30px;}
+section{padding:100px 0;}
+.kicker{text-transform:uppercase;font-size:0.75rem;letter-spacing:0.15em;color:var(--accent);margin-bottom:10px;display:block;text-align:center;}
+h2{font-size:clamp(2rem,3vw,3rem);margin-bottom:20px;text-align:center;}
+.text,.positioning,.proof,.contact{text-align:center;}
+.positioning,.services,.proof-grid{display:grid;align-items:start;}
+.big-statement{font-size:1.6rem;font-family:'Inter',sans-serif;font-weight:800;line-height:1.3;margin-bottom:20px;}
+.services{grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:40px auto 0;}
+.card{display:flex;flex-direction:column;justify-content:flex-start;height:100%;text-align:left;}
+.card p{text-align:left;}
+.card li{position:relative;padding-left:20px;margin-bottom:10px;color:var(--text);}
+.card li::before{content:"—";position:absolute;left:0;color:var(--accent);}
+.card ul{text-align:left;padding-left:0;margin-top:20px;list-style:none;}
+.card h3{margin-bottom:15px;font-size:1.6rem;font-weight:800;}
+.proof-intro{max-width:700px;margin:0 auto 24px;color:var(--text);text-align:center;}
+.proof-grid{grid-template-columns:1fr 1fr;gap:40px;max-width:900px;margin:40px auto 0;}
+.proof-grid .card{height:100%;}
+.contact a{margin-top:20px;display:inline-block;}
+.site-footer{border-top:1px solid var(--line);padding:28px 0 50px;}
+.footer-inner{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;}
+.footer-inner a{color:var(--muted);text-decoration:none;}
+.footer-inner a:hover{color:var(--accent);}
+.legal-section{padding:80px 0;border-top:1px solid var(--line);}
+.legal-copy{max-width:760px;}
+.legal-copy h2{text-align:left;margin-bottom:24px;}
+.legal-copy h3{font-size:1.3rem;margin:32px 0 12px;}
+.legal-copy p{margin-bottom:16px;}
+.legal-copy a{color:var(--accent);text-decoration:none;}
+.legal-copy a:hover{text-decoration:underline;}
+@media(max-width:900px){.services,.proof-grid{grid-template-columns:1fr;}nav{gap:14px;}.nav-inner{height:auto;min-height:70px;padding:12px 0;flex-wrap:wrap;}.hero{min-height:85vh;}}
+@media(max-width:640px){.container,.nav-inner{width:min(var(--max),calc(100% - 24px));}nav{display:none;}h1{max-width:none;}.lead{font-size:1rem;}section{padding:76px 0;}.services,.proof-grid{gap:24px;}.card h3{font-size:1.35rem;}}
   </style>
 </head>
-
-<body>
-  <body id="top"></body>
+<body id="top">
   <header class="site-header">
     <div class="nav-inner">
       <a href="#top" class="brand">TRYYO</a>
@@ -418,53 +96,32 @@ nav a:hover{
         <a href="#contact" class="cta">Start a conversation</a>
       </nav>
     </div>
-
-    <script>
-      window.addEventListener('scroll', () => {
-        document.querySelector('.site-header')
-          .classList.toggle('scrolled', window.scrollY > 20)
-      })
-      </script>
   </header>
-
-  <!-- HERO -->
 
   <section class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
       <h1>Clarity, alignment and momentum.</h1>
-      <p class="lead">
-        Impact Framing and Design Sprints for teams that need better decisions before investments.
-      </p>
+      <p class="lead">Impact Framing and Design Sprints for teams that need better decisions before investments.</p>
       <a href="#contact" class="button">Discuss your challenge</a>
     </div>
   </section>
 
-  <!-- Positioning -->
-
   <section id="positioning">
     <div class="container positioning">
       <div class="kicker">The Approach</div>
-<div class="big-statement">
-  <p> TRYYO helps teams create clarity, alignment, and momentum before bigger investments.</p>
-</div>
-    <p>Most teams do not get stuck because they lack ideas.</p>
-    <p>They get stuck because the real problem is not clear, the goals are not shared, and the next step feels risky.</p>
-      <p>Through impact framing and design sprints, TRYYO turns complexity into a shared understanding of the challenge, 
-      the opportunity, and the decision worth making next.</p>
-
+      <div class="big-statement"><p>TRYYO helps teams create clarity, alignment, and momentum before bigger investments.</p></div>
+      <p>Most teams do not get stuck because they lack ideas.</p>
+      <p>They get stuck because the real problem is not clear, the goals are not shared, and the next step feels risky.</p>
+      <p>Through impact framing and design sprints, TRYYO turns complexity into a shared understanding of the challenge, the opportunity, and the decision worth making next.</p>
     </div>
   </section>
-
-  <!-- SERVICES -->
 
   <section id="services">
     <div class="container">
       <span class="kicker">Services</span>
       <h2>Focused formats for real progress.</h2>
-
       <div class="services">
-  
         <div class="card">
           <h3>Impact Framing (1 day)</h3>
           <p>A one-day workshop to define the real problem, align on outcomes, and choose the opportunity worth pursuing.</p>
@@ -474,36 +131,24 @@ nav a:hover{
             <li>Select opportunity to drive impact</li>
           </ul>
         </div>
-      
         <div class="card">
-          <h3>Design Sprint (4-5 Days)</h3>
-          <p>A structured, proven approach to move from challenge, idea, opportunity
-            to tested concept and reduce the risk of building the wrong thing.</p>
+          <h3>Design Sprint (4–5 days)</h3>
+          <p>A structured, proven approach to move from challenge and opportunity to a tested concept and reduce the risk of building the wrong thing.</p>
           <ul>
             <li>Accelerate decision-making and alignment</li>
             <li>Map critical assumptions to test</li>
             <li>Validate concept with testing</li>
           </ul>
         </div>
-        
       </div>
-      </div>
-
-    
     </div>
   </section>
-
-  <!-- PROOF -->
 
   <section id="proof">
     <div class="container proof">
       <span class="kicker">Why TRYYO</span>
       <h2>Better decisions before bigger investments.</h2>
-  
-      <p class="proof-intro">
-        TRYYO helps teams create clarity, alignment, and momentum before they commit time, budget, and energy to the wrong thing.
-      </p>
-  
+      <p class="proof-intro">TRYYO helps teams create clarity, alignment, and momentum before they commit time, budget, and energy to the wrong thing.</p>
       <div class="proof-grid">
         <div class="card">
           <h3>What you get</h3>
@@ -515,7 +160,6 @@ nav a:hover{
             <li>Momentum from discussion to decision</li>
           </ul>
         </div>
-  
         <div class="card">
           <h3>What changes</h3>
           <ul>
@@ -530,15 +174,11 @@ nav a:hover{
     </div>
   </section>
 
-  <!-- CONTACT -->
-
   <section id="contact">
     <div class="container contact">
       <span class="kicker">Contact</span>
       <h2>Ready to get started?</h2>
-      <p>
-        Whether you have a specific opportunity or a complex challenge that needs clarity, let’s talk about which format fits your team best.
-      </p>
+      <p>Whether you have a specific opportunity or a complex challenge that needs clarity, let’s talk about which format fits your team best.</p>
       <a href="mailto:hello@tryyo.de" class="button">hello@tryyo.de</a>
     </div>
   </section>
@@ -554,74 +194,38 @@ nav a:hover{
     <div class="container legal-copy">
       <span class="kicker">Legal</span>
       <h2>Impressum</h2>
-  
       <p>Angaben gemäß § 5 DDG</p>
-  
-      <p>
-        Lucie Heidenreich<br>
-        Sandstraße 17<br>
-        91080 Spardorf<br>
-        Deutschland
-      </p>
-  
-      <p>
-        E-Mail:
-        <a href="mailto:hello@tryyo.de">hello@tryyo.de</a>
-      </p>
-  
-      <p>
-        Berufliche Tätigkeit: Angebote im Bereich Workshops, Impact Framing und Design Sprints.
-      </p>
-  
-      <p>
-        Umsatzsteuer-ID: nicht vorhanden
-      </p>
+      <p>Lucie Heidenreich<br>Sandstraße 17<br>91080 Spardorf<br>Deutschland</p>
+      <p>E-Mail: <a href="mailto:hello@tryyo.de">hello@tryyo.de</a></p>
+      <p>Berufliche Tätigkeit: Angebote im Bereich Workshops, Impact Framing und Design Sprints.</p>
+      <p>Umsatzsteuer-ID: nicht vorhanden</p>
     </div>
   </section>
+
   <section id="datenschutz" class="legal-section">
     <div class="container legal-copy">
       <span class="kicker">Legal</span>
       <h2>Datenschutz</h2>
-  
-      <p>
-        Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website dient der Bereitstellung von Informationen über TRYYO und die angebotenen Leistungen.
-      </p>
-  
+      <p>Der Schutz Ihrer persönlichen Daten ist mir wichtig. Diese Website dient der Bereitstellung von Informationen über TRYYO und die angebotenen Leistungen.</p>
       <h3>1. Verantwortliche</h3>
-      <p>
-        Lucie Heidenreich<br>
-        Sandstraße 17<br>
-        91080 Spardorf<br>
-        Deutschland<br>
-        E-Mail: <a href="mailto:hello@tryyo.de">hello@tryyo.de</a>
-      </p>
-  
+      <p>Lucie Heidenreich<br>Sandstraße 17<br>91080 Spardorf<br>Deutschland<br>E-Mail: <a href="mailto:hello@tryyo.de">hello@tryyo.de</a></p>
       <h3>2. Hosting über GitHub Pages</h3>
-      <p>
-        Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Website können durch den Hosting-Anbieter technisch erforderliche Zugriffsdaten verarbeitet werden, insbesondere IP-Adresse, Datum und Uhrzeit des Abrufs, Browserinformationen sowie Informationen zum aufgerufenen Inhalt.
-      </p>
-  
-      <h3>3. Einbindung von Google Fonts</h3>
-      <p>
-        Auf dieser Website werden Schriftarten von Google Fonts eingebunden. Dabei kann es technisch dazu kommen, dass Ihre IP-Adresse sowie weitere browserbezogene Informationen an Google übermittelt werden.
-      </p>
-  
+      <p>Diese Website wird über GitHub Pages gehostet. Beim Aufruf der Website können durch den Hosting-Anbieter technisch erforderliche Zugriffsdaten verarbeitet werden, insbesondere IP-Adresse, Datum und Uhrzeit des Abrufs, Browserinformationen sowie Informationen zum aufgerufenen Inhalt.</p>
+      <h3>3. Lokale Schriftarten</h3>
+      <p>Auf dieser Website werden lokal gehostete Schriftarten eingebunden. Dabei werden beim Seitenaufruf keine Schriftdateien von externen Anbietern nachgeladen.</p>
       <h3>4. Kontaktaufnahme per E-Mail</h3>
-      <p>
-        Wenn Sie per E-Mail Kontakt aufnehmen, werden die von Ihnen übermittelten personenbezogenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen verarbeitet.
-      </p>
-  
+      <p>Wenn Sie per E-Mail Kontakt aufnehmen, werden die von Ihnen übermittelten personenbezogenen Daten ausschließlich zur Bearbeitung Ihrer Anfrage und für den Fall von Anschlussfragen verarbeitet.</p>
       <h3>5. Ihre Rechte</h3>
-      <p>
-        Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie gegebenenfalls auf Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.
-      </p>
-  
+      <p>Sie haben im Rahmen der gesetzlichen Vorschriften das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie gegebenenfalls auf Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten.</p>
       <h3>6. Hinweis</h3>
-      <p>
-        Diese Datenschutzerklärung bezieht sich auf den aktuellen Stand dieser Website ohne Kontaktformular, Newsletter-Tool, Analyse-Tool oder Tracking-Cookies.
-      </p>
+      <p>Diese Datenschutzerklärung bezieht sich auf den aktuellen Stand dieser Website ohne Kontaktformular, Newsletter-Tool, Analyse-Tool oder Tracking-Cookies.</p>
     </div>
   </section>
- 
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
 </body>
 </html>
